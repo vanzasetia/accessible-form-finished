@@ -1,4 +1,4 @@
-![](./design/banner.jpg)
+![](./design/banner.png)
 
 # Accessible Form (Finished Project)
 
