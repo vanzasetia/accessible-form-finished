@@ -1,0 +1,9 @@
+*.md
+
+*.json
+
+svg/
+
+*.min.*
+
+LICENSE

@@ -1,0 +1,207 @@
+:root {
+  --step--1: clamp(0.88rem, calc(0.96rem + -0.14vw), 0.94rem);
+  --step-0: clamp(1.13rem, calc(1.06rem + 0.32vw), 1.25rem);
+  --step-1: clamp(1.35rem, calc(1.14rem + 1.06vw), 1.77rem);
+  --step-2: clamp(1.62rem, calc(1.17rem + 2.23vw), 2.5rem);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --very-light-gray: hsl(0, 0%, 90%);
+  --red: hsl(0, 100%, 46%);
+  --body-background-color: var(--very-light-gray);
+  --body-font-size: var(--step-0);
+  --card-background-color: var(--white);
+  --card-text-color: var(--black);
+  --card-box-shadow: 0 3.125rem 3.125rem -1.5625rem rgba(75, 92, 154, 0.24);
+  --card-max-width: 31.25rem;
+  --invalid-color: var(--red);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  --body-padding: 1rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--body-background-color);
+  padding-inline: var(--body-padding);
+  padding-block: var(--body-padding);
+  min-height: 100vh;
+  font-size: var(--body-font-size);
+  line-height: 1.5;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.title {
+  font-size: var(--step-2);
+}
+
+.focus-visible-black:focus-visible {
+  outline: 0.2rem dashed var(--black);
+  outline-offset: 0.3rem;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.flow > * + * {
+  margin-block-start: var(--space, 1em);
+}
+
+.card {
+  --card-padding: 2rem;
+  margin-inline: auto;
+  box-shadow: var(--card-box-shadow);
+  border-radius: 1em;
+  background-color: var(--card-background-color);
+  padding-inline: var(--card-padding);
+  padding-block: var(--card-padding);
+  max-width: var(--card-max-width);
+  color: var(--card-text-color);
+}
+
+.form__label {
+  display: block;
+  margin-block-end: 0.5rem;
+}
+
+.form__input {
+  --input-padding: 0.6rem;
+  --input-border-color: var(--black);
+  --input-border: 0.2rem solid var(--input-border-color);
+  display: block;
+  border-radius: 0.5em;
+  border-inline: var(--input-border);
+  border-block: var(--input-border);
+  padding-inline: var(--input-padding);
+  padding-block: var(--input-padding);
+  width: 100%;
+}
+
+.form__input.is-invalid {
+  --input-border-color: var(--invalid-color);
+  background-image: url("../svg/icon-error.svg");
+  background-position: center right 1rem;
+  background-repeat: no-repeat;
+}
+
+.form__alert {
+  margin-inline-start: 1rem;
+  margin-block-start: 0.2rem;
+  color: var(--invalid-color);
+  font-weight: 700;
+  font-size: var(--step--1);
+}
+
+.button {
+  --button-border: 0.2rem solid var(--black);
+  cursor: pointer;
+  border: none;
+  border-inline: var(--button-border);
+  border-block: var(--button-border);
+  padding-inline: 0.6rem;
+  padding-block: 0.6rem;
+  text-decoration: none;
+}
+
+.button--round {
+  border-radius: 0.5em;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+.button--bold {
+  font-weight: 700;
+}
+
+.button--uppercase {
+  text-transform: uppercase;
+}
+
+.button--black {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.button--black:hover,
+.button--black:active {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .button--black {
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+  }
+}

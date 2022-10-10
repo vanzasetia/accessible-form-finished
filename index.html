@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Form - Project Example</title>
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <script src="/js/app.min.js" defer></script>
+  </head>
+  <body dir="ltr">
+    <main class="flow">
+      <h1 class="text-align-center title">Accessible Form - Project Example</h1>
+      <form
+        class="card flow form js-form"
+        novalidate
+        name="sign-up"
+        method="POST"
+        data-netlify="true"
+      >
+        <div class="form__control">
+          <label class="form__wrapper">
+            <span class="form__label">Name</span>
+            <input
+              class="form__input focus-visible-black js-input"
+              type="text"
+              name="name"
+              required
+              aria-describedby="name-alert"
+              data-id="name"
+            />
+          </label>
+          <p
+            id="name-alert"
+            class="form__alert js-alert"
+            aria-live="polite"
+            data-id="name"
+          ></p>
+        </div>
+        <div class="form__control">
+          <label class="form__wrapper">
+            <span class="form__label">Email</span>
+            <input
+              class="form__input focus-visible-black js-input"
+              type="email"
+              name="email"
+              required
+              aria-describedby="email-alert"
+              data-id="email"
+            />
+          </label>
+          <p
+            id="email-alert"
+            class="form__alert js-alert"
+            aria-live="polite"
+            data-id="email"
+          ></p>
+        </div>
+        <button
+          class="button button--block button--round button--bold button--uppercase button--black focus-visible-black"
+          type="submit"
+        >
+          Sign Up
+        </button>
+      </form>
+    </main>
+  </body>
+</html>
