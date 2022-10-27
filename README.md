@@ -18,7 +18,7 @@
 
 ### Links
 - [Live Review](https://a11yform.netlify.app/)
-- [Code Newbie Article]()
+- [Code Newbie Article](https://community.codenewbie.org/vanzasetia/how-to-create-accessible-form-with-boring-design-4ab0)
 
 ### Screenshots
 
